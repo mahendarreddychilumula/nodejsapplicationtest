@@ -1,0 +1,21 @@
+# version: "3"
+# services:
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:3000"
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "5000:5000"
+
+version: "3.9"
+services:
+  web:
+     image: "mahendarreddychilumula/today-repo:froununtend"
+     ports:
+       - "3000:3000"
+  backend:
+     image: "mahendarreddychilumula/today-repo:backend"
+     ports:
+       - "5000:5000"

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  b-end
+  labels:
+    name:  b-end
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  b-end
+    spec:
+      containers:
+      - image:  docker pull mahendarreddychilumula/today-repo:froununtend
+        name:  f-end
+        ports:
+         - containerPort: 5000

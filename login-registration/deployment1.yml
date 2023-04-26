@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  f-end
+  labels:
+    name:  f-end
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  f-end
+    spec:
+      containers:
+      - image:  ipedrazas/docmock
+        name:  f-end
+        ports:
+         - containerPort: 3000
